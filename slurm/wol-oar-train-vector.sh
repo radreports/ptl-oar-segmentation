@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR0
-#SBATCH --gpus=8
 #SBATCH --mem=169G
 #SBATCH -c 38
 #SBATCH -n 1
