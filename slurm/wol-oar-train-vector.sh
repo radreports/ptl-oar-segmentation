@@ -1,13 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR0
-#SBATCH --gres=gpu:v100:4
+#SBATCH --gres=gpu:8
 #SBATCH --mem=169G
 #SBATCH -c 38
 #SBATCH -n 1
-#SBATCH -C "gpu32g"
 #SBATCH -t 2-23:59:59
-#SBATCH --account=radiomics_gpu
-#SBATCH --partition=gpu_radiomics
 
 # submit path to recently run model...
 # update to satisfy OAR training ...
@@ -35,7 +32,7 @@ volume_type='oars'
 oar_version=19 # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1,2,3'
+gpus='0,1,2,3,4,5,6,7'
 backend='ddp'
 epoch=500 #500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
@@ -63,6 +60,7 @@ external=False
 fmaps=48 #56
 spacing='3mm' # spacing between slices...
 filter=True
+data_path="/storage/data/ml2022/RADCURE_VECTOR"
 home_path="/h/jmarsill/ptl-oar-segmentation" # server "/home/gpudual"
 model_path="/h/jmarsill/models" #"--model-path"
 use_16bit=False
@@ -80,6 +78,7 @@ python $path \
         --scheduler-type $scheduler_type \
         --aug-prob $aug_p \
         --use-16bit $use_16bit \
+        --data-path $data_path \
         --home-path $home_path \
         --model-path $model_path \
         --volume-type $volume_type \
