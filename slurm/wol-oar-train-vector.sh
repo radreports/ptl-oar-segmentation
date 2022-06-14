@@ -15,7 +15,7 @@
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
 # if you have a specified conda environment...
-source activate base
+source activate light8
 
 model='WOLNET' # with new windowing
 model_name='WOLNET_2020_08_28_152828' # allows us to reload from previous settings...
