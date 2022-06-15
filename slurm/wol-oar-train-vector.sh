@@ -52,8 +52,8 @@ fmaps=48 #56
 spacing='3mm' # spacing between slices...
 filter=True
 data_path="/storage/data/ml2022/RADCURE_VECTOR"
-home_path="/h/jmarsill/ptl-oar-segmentation" # server "/home/gpudual"
-model_path="/h/jmarsill/models" #"--model-path"
+home_path="/h/jmarsilla/ptl-oar-segmentation" # server "/home/gpudual"
+model_path="/h/jmarsilla/models" #"--model-path"
 use_16bit=False
 # save model to...
 path=$home_path'/train.py' #train_2 if training new model
