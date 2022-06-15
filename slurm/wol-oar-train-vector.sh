@@ -55,7 +55,9 @@ data_path="/storage/data/ml2022/RADCURE_VECTOR"
 home_path="/h/jmarsill/ptl-oar-segmentation" # server "/home/gpudual"
 model_path="/h/jmarsill/models" #"--model-path"
 use_16bit=False
-print_outputs_to=$model'_'$(date "+%b_%d_%Y_%T").txt # save model to...
+# save model to...
+path=$home_path'/train.py' #train_2 if training new model
+print_outputs_to=$model'_GTV_'$(date "+%b_%d_%Y_%T").txt
 
 echo 'Started python script.'
 
