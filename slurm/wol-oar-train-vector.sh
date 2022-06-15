@@ -5,16 +5,8 @@
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 
-# submit path to recently run model...
-# update to satisfy OAR training ...
-# weights_path="/cluster/projects/radiomics/Temp/models/WOLNET_2020_08_28_152828/lightning_logs/version_2021387/checkpoints/last.ckpt"
-# /cluster/projects/radiomics/Temp/models/WOLNET_2020_08_28_152828/lightning_logs/version_2081530/checkpoints/last.ckpt radiomics/Temp/models/WOLNET_2020_08_28_152828/lightning_logs/version_2016427/checkpoints/hello78.ckpt
-# meta_path='/home/gpudual/bhklab/private/jmarsill/models/VNET_2020_03_10_041040/lightning_logs/version_612867/meta_tags.csv'
-# only thing modified here is the loss function implementation...
-
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
-# if you have a specified conda environment...
 source activate light8
 
 model='WOLNET' # with new windowing
@@ -64,11 +56,8 @@ home_path="/h/jmarsill/ptl-oar-segmentation" # server "/home/gpudual"
 model_path="/h/jmarsill/models" #"--model-path"
 use_16bit=False
 print_outputs_to=$model'_'$(date "+%b_%d_%Y_%T").txt # save model to...
-# train_2 if training new model from scratch...
 
 echo 'Started python script.'
-
-# add this to preload trained model... # --weights-path $weights_path \
 
 python $path \
         --model-name $model_name \
