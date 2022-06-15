@@ -59,52 +59,20 @@ print_outputs_to=$model'_'$(date "+%b_%d_%Y_%T").txt # save model to...
 
 echo 'Started python script.'
 
-python $path \
-        --model-name $model_name \
-        --external $external \
-        --scheduler $scheduler \
-        --scheduler-type $scheduler_type \
-        --aug-prob $aug_p \
-        --use-16bit $use_16bit \
-        --data-path $data_path \
-        --home-path $home_path \
-        --model-path $model_path \
-        --volume-type $volume_type \
-        --oar-version $oar_version \
-        --dce-version $dce_version \
-        --spacing $spacing \
-        --f-maps $fmaps \
-        --backend $backend \
-        --overfit $overfit \
-        --overfit-by $overfit_by \
-        --gpus $gpus \
-        --n-classes $classes\
-        --shuffle-data $shuffle \
-        --n-epochs $epoch \
-        --pkl-name $pkl \
-        --data $data \
-        --tt-split $tt_split \
-        --gamma $gamma \
-        --decay-after $decay_after \
-        --site $site \
-        --model $model \
-        --split-mode $split_mode \
-        --device-ids $div_ids \
-        --fold $fold \
-        --workers $workers \
-        --lr $lr \
-        --decay $weight_decay \
-        --batch-size $batch \
-        --loss $loss_type \
-        --optim $optim \
-        --norm $norm \
-        --crop-factor $crop_factor \
-        --scale-factor $scale_by \
-        --crop-as $crop_as \
-        --clip-min $clip_min\
-        --clip-max $clip_max \
-        --window $window \
-        --filter $filter \
+python $path --model $model --model-name $model_name --external $external \
+        --scheduler $scheduler --scheduler-type $scheduler_type --aug-prob $aug_p \
+        --use-16bit $use_16bit --data-path $data_path --home-path $home_path \
+        --model-path $model_path --volume-type $volume_type --oar-version $oar_version \
+        --dce-version $dce_version --spacing $spacing --f-maps $fmaps \
+        --backend $backend --overfit $overfit --overfit-by $overfit_by \
+        --gpus $gpus --n-classes $classes --shuffle-data $shuffle \
+        --n-epochs $epoch --pkl-name $pkl --data $data --tt-split $tt_split \
+        --gamma $gamma --decay-after $decay_after --site $site \
+        --split-mode $split_mode --device-ids $div_ids --fold $fold \
+        --workers $workers --lr $lr --decay $weight_decay --batch-size $batch \
+        --loss $loss_type --optim $optim --norm $norm --crop-factor $crop_factor \
+        --scale-factor $scale_by --crop-as $crop_as --clip-min $clip_min\
+        --clip-max $clip_max --window $window --filter $filter \
         --resample $factor > $print_outputs_to
 
 echo 'Python script finished.'
