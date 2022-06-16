@@ -68,7 +68,7 @@ python $path --model $model --model-name $model_name --external $external \
         --dce-version $dce_version --spacing $spacing --f-maps $fmaps \
         --backend $backend --overfit $overfit --overfit-by $overfit_by \
         --gpus $gpus --n-classes $classes --shuffle-data $shuffle \
-        --n-epochs $epoch --pkl-name $pkl --data $data --tt-split $tt_split \
+        --n-epochs $epoch --data $data --tt-split $tt_split \
         --gamma $gamma --decay-after $decay_after --site $site \
         --split-mode $split_mode --device-ids $div_ids --fold $fold \
         --workers $workers --lr $lr --decay $weight_decay --batch-size $batch \
