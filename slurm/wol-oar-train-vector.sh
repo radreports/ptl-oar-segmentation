@@ -7,7 +7,7 @@
 
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
-source activate light8
+source activate light
 
 model='WOLNET' # with new windowing
 model_name='WOLNET_2020_08_28_152828' # allows us to reload from previous settings...
