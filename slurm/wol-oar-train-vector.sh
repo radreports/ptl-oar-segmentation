@@ -3,6 +3,7 @@
 #SBATCH --mem=169G
 #SBATCH -c 24
 #SBATCH -n 1
+#SBATCH --gres=gpu:8
 #SBATCH -t 2-23:59:59
 
 echo 'Starting Shell Script'
@@ -30,7 +31,7 @@ fold=3 # for Kfold validation, fold 1 already completed...
 workers=3 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
-batch=2 # batch size # unet3D can use 2
+batch=1 # batch size # unet3D can use 2
 factor=1 # resample by
 tt_split=.9
 aug_p=0.9
@@ -39,13 +40,13 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=9 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
 scale_by=2
 window=56 # default is 5
-crop_factor=176 #176 # 192 # 448 # 384 # default is 512
+crop_factor=160 #176 # 192 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=48 #56
@@ -57,7 +58,7 @@ model_path="/h/jmarsilla/models" #"--model-path"
 use_16bit=False
 # save model to...
 path=$home_path'/train.py' #train_2 if training new model
-print_outputs_to=$model'_GTV_'$(date "+%b_%d_%Y_%T").txt
+print_outputs_to=$model'_OAR_'$(date "+%b_%d_%Y_%T").txt
 
 echo 'Started python script.'
 
