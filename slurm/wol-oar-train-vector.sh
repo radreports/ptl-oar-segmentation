@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR0
-#SBATCH --mem=169G
-#SBATCH -c 24
+#SBATCH --mem=42G
+#SBATCH -c 6
 #SBATCH -n 1
-#SBATCH --gres=gpu:8
+#SBATCH --gres=gpu:2
 #SBATCH -t 2-23:59:59
 
 echo 'Starting Shell Script'
@@ -16,7 +16,7 @@ site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 
 split_mode='csv' #'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
 data='RADCURE' #Dataset being used
-loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
+loss_type="TAL" # "WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
 optim='RADAM' #'SGD' # 'RADAM' #'ADAM'
 dce_version=1
 deform=True
@@ -24,7 +24,7 @@ volume_type='oars'
 oar_version=19 # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1,2,3,4,5,6,7'
+gpus='0,1' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 #500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
@@ -40,7 +40,7 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=9 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=35 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
@@ -52,8 +52,8 @@ external=False
 fmaps=48 #56
 spacing='3mm' # spacing between slices...
 filter=True
-data_path="/storage/data/ml2022/RADCURE_VECTOR"
-home_path="/h/jmarsilla/ptl-oar-segmentation" # server "/home/gpudual"
+data_path="/storage/data/ml2022/RADCURE_VECTOR/"
+home_path="/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/h/jmarsilla/models" #"--model-path"
 use_16bit=False
 # save model to...
