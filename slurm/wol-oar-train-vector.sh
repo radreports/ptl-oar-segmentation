@@ -13,10 +13,15 @@ source activate light
 model='WOLNET' # with new windowing
 model_name='WOLNET_2020_08_28_152828' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
-split_mode='csv' #'csv_full' #  #
+split_mode='csv' # 'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
+<<<<<<< HEAD
+data='RADCURE' # Dataset being used
+loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
+=======
 data='RADCURE' #Dataset being used
 loss_type="TAL" # "WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
+>>>>>>> dfcf1f0a253b0edd517cfb69df13811a3f7b1a28
 optim='RADAM' #'SGD' # 'RADAM' #'ADAM'
 dce_version=1
 deform=True
@@ -26,7 +31,7 @@ clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
 gpus='0,1' # 2,3' # ,4,5,6,7'
 backend='ddp'
-epoch=500 #500 # 100 # number of epochs
+epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
 workers=3 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
@@ -55,8 +60,7 @@ filter=True
 data_path="/storage/data/ml2022/RADCURE_VECTOR/"
 home_path="/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/h/jmarsilla/models" #"--model-path"
-use_16bit=False
-# save model to...
+use_16bit=False # save model to...
 path=$home_path'/train.py' #train_2 if training new model
 print_outputs_to=$model'_OAR_'$(date "+%b_%d_%Y_%T").txt
 
