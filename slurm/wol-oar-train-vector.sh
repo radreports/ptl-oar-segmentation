@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR0
-#SBATCH --mem=42G
-#SBATCH -c 6
+#SBATCH --mem=84G
+#SBATCH -c 12
 #SBATCH -n 1
-#SBATCH --gres=gpu:2
-#SBATCH -t 7-23:59:59
+#SBATCH --gres=gpu:4
+#SBATCH -t 8-23:59:59
 
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
@@ -26,7 +26,7 @@ volume_type='oars'
 # oar_version="" # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1' # 2,3' # ,4,5,6,7'
+gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
