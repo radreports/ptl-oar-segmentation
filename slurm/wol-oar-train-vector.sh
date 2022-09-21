@@ -48,6 +48,7 @@ overfit=False # False
 overfit_by=.15
 scale_by=2
 window=56 # default is 5
+tag="NECK"
 crop_factor=160 # 192 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
@@ -77,6 +78,6 @@ python $path --model $model --model-name $model_name --external $external \
         --loss $loss_type --optim $optim --norm $norm --crop-factor $crop_factor \
         --scale-factor $scale_by --crop-as $crop_as --clip-min $clip_min\
         --clip-max $clip_max --window $window --filter $filter \
-        --resample $factor > $print_outputs_to
+        --resample $factor --tag $tag > $print_outputs_to
 
 echo 'Python script finished.'
