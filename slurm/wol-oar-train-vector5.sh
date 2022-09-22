@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR0
+#SBATCH --job-name=WOLOAR4
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH -n 1
@@ -60,7 +60,7 @@ home_path="/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
 path=$home_path'/train.py' #train_2 if training new model
-print_outputs_to=$model'_OAR_'$(date "+%b_%d_%Y_%T").txt
+print_outputs_to=$model'_'$tag'_'$(date "+%b_%d_%Y_%T").txt
 
 echo 'Started python script.'
 
