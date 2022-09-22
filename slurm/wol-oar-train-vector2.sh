@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR0
-#SBATCH --mem=42G
-#SBATCH -c 6
+#SBATCH --mem=84G
+#SBATCH -c 12
 #SBATCH -n 1
-#SBATCH --gres=gpu:2
-#SBATCH -t 7-23:59:59
+#SBATCH --gres=gpu:4
+#SBATCH -t 8-23:59:59
 
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
@@ -26,7 +26,7 @@ volume_type='oars'
 # oar_version="" # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1' # 2,3' # ,4,5,6,7'
+gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
@@ -42,7 +42,7 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=3 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=5 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
