@@ -1,5 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR3
+#SBATCH --nodelist=slurm3
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH -n 1
