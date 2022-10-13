@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR4
+#SBATCH --job-name=WOLOAR8
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH -n 1
