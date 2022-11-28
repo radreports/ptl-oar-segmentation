@@ -4,7 +4,7 @@
 #SBATCH -c 12
 #SBATCH -n 1
 #SBATCH --gres=gpu:4
-#SBATCH -t 8-23:59:59
+#SBATCH -t 2-23:59:59
 
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
