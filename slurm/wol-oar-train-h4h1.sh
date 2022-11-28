@@ -5,6 +5,8 @@
 #SBATCH -n 1
 #SBATCH --gres=gpu:4
 #SBATCH -t 2-23:59:59
+#SBATCH --account=radiomics_gpu
+#SBATCH --partition=gpu_radiomics
 
 echo 'Starting Shell Script'
 source /h/jmarsilla/.bashrc
