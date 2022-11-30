@@ -9,7 +9,7 @@
 #SBATCH --partition=gpu_radiomics
 
 echo 'Starting Shell Script'
-source /h/jmarsilla/.bashrc
+source /cluster/home/jmarsill/.bashrc
 source activate light8
 
 model='WOLNET' # with new windowing
