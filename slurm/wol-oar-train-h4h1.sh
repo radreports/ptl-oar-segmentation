@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR01
+#SBATCH --job-name=WOLOAR0
 #SBATCH --mem=84G
 #SBATCH -c 12
-#SBATCH -n 1
 #SBATCH --gres=gpu:4
+#SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
 #SBATCH --partition=gpu_radiomics
@@ -24,8 +24,7 @@ loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type=
 optim='RADAM' #'SGD' # 'RADAM' #'ADAM'
 dce_version=1
 deform=True
-volume_type='oars'
-# oar_version="" # new windowing used as of Aug 22/20
+volume_type='oars' # oar_version="" # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
 gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
@@ -57,8 +56,8 @@ external=False
 fmaps=56
 spacing='3mm' # spacing between slices...
 filter=True
-data_path= "/cluster/projects/radiomics/Temp/joe/RADCURE_VECTOR_UPDATE/" # "/storage/data/ml2022/RADCURE_VECTOR/"
-home_path= "/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
+data_path="/cluster/projects/radiomics/Temp/joe/RADCURE_VECTOR_UPDATE/" # "/storage/data/ml2022/RADCURE_VECTOR/"
+home_path="/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/cluster/projects/radiomics/Temp/joe/models-1222" # "/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
 path="/cluster/home/jmarsill/ptl-oar-segmentation/train.py" #train_2 if training new model
