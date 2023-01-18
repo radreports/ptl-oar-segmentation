@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=OAR_NECK
+#SBATCH --job-name=OAR_LARX
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH --gres=gpu:4
@@ -43,14 +43,14 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=3 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=4 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
 scale_by=2
 window=56 # default is 5
-tag="NECK"
-crop_factor=160 #192 # 448 # 384 # default is 512
+tag="LARYNX"
+crop_factor=192 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=56
