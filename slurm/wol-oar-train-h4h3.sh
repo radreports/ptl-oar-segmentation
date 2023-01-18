@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR0
+#SBATCH --job-name=WOLOAR_NECK
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH --gres=gpu:4
@@ -50,7 +50,7 @@ overfit_by=.15
 scale_by=2
 window=56 # default is 5
 tag="NECK"
-crop_factor=192 # 448 # 384 # default is 512
+crop_factor=160 #192 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=56

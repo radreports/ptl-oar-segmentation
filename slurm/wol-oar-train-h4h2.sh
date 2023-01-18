@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR_TEST
+#SBATCH --job-name=WOLOAR_TOP
 #SBATCH --gres=gpu:v100:1
 #SBATCH --mem=168G
 #SBATCH -c 17
