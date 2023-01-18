@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_LARX
-#SBATCH --mem=84G
-#SBATCH -c 16
-#SBATCH --gres=gpu:4
+#SBATCH --mem=42G
+#SBATCH -c 8
+#SBATCH --gres=gpu:2
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
@@ -27,7 +27,7 @@ deform=True
 volume_type='oars' # oar_version="" # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
+gpus='0,1' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
