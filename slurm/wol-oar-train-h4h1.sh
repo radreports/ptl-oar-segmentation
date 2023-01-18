@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR_BRAC
+#SBATCH --job-name=OAR_BRAC
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH --gres=gpu:4
