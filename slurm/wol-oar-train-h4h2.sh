@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_TOP
 #SBATCH --mem=84G
-#SBATCH -c 12
+#SBATCH -c 16
 #SBATCH --gres=gpu:4
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
