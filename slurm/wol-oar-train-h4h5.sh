@@ -1,11 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR_GLAND
-#SBATCH --gres=gpu:v100:1
-#SBATCH --mem=168G
-#SBATCH -c 17
+#SBATCH --job-name=OAR_GLAND
+#SBATCH --mem=84G
+#SBATCH -c 12
+#SBATCH --gres=gpu:4
 #SBATCH -n 1
-#SBATCH -C "gpu32g"
-#SBATCH -t 23:59:59
+#SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
 #SBATCH --partition=gpu_radiomics
 

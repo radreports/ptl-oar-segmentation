@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=WOLOAR_NECK
+#SBATCH --job-name=OAR_NECK
 #SBATCH --mem=84G
 #SBATCH -c 12
 #SBATCH --gres=gpu:4
