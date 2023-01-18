@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_NMUS
-#SBATCH --mem=84G
-#SBATCH -c 16
-#SBATCH --gres=gpu:4
+#SBATCH --mem=42G
+#SBATCH -c 8
+#SBATCH --gres=gpu:2
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
@@ -16,7 +16,7 @@ model='WOLNET' # with new windowing
 model_name='WOLNET_2022_09_12_160955' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
-div_ids='0,1,2,3' # number of gpus
+div_ids='0,1' # number of gpus
 data='RADCURE' # Dataset being used
 loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
 # data='RADCURE' #Dataset being used
