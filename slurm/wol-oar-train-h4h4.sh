@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_NMUS
-#SBATCH --mem=42G
-#SBATCH -c 8
+#SBATCH --mem=112G
+#SBATCH -c 16
 #SBATCH --gres=gpu:2
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
@@ -31,7 +31,7 @@ gpus='0,1' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
-workers=4 # number of cpus used (each node has max of 45)
+workers=8 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=1 # batch size # unet3D can use 2
