@@ -1,9 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_MAJ
-#SBATCH --mem=169G
+#SBATCH --mem=168G
 #SBATCH --gres=gpu:v100:4
-#SBATCH -c 38
-#SBATCH --gres=gpu:4
+#SBATCH -c 36
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
@@ -32,7 +31,7 @@ gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=4 # for Kfold validation, fold 1 already completed...
-workers=9 # number of cpus used (each node has max of 45)
+workers=8 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=1 # batch size # unet3D can use 2
@@ -51,7 +50,7 @@ overfit_by=.15
 scale_by=2
 window=56 # default is 5
 tag="MAJOR"
-crop_factor=192 #448 # 384 # default is 512
+crop_factor=160 #448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=48

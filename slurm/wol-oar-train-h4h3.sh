@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_NECK
-#SBATCH --mem=112G
-#SBATCH -c 16
-#SBATCH --gres=gpu:2
+#SBATCH --mem=230G
+#SBATCH -c 40
+#SBATCH --gres=gpu:4
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
@@ -16,7 +16,7 @@ model='WOLNET' # with new windowing
 model_name='WOLNET_2022_09_12_160955' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
-div_ids='0,1' # number of gpus
+div_ids='0,1,2,3' # number of gpus
 data='RADCURE' # Dataset being used
 loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
 # data='RADCURE' #Dataset being used
@@ -31,7 +31,7 @@ gpus='0,1' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=3 # for Kfold validation, fold 1 already completed...
-workers=8 # number of cpus used (each node has max of 45)
+workers=9 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=1 # batch size # unet3D can use 2
@@ -50,7 +50,7 @@ overfit_by=.15
 scale_by=2
 window=56 # default is 5
 tag="NECK"
-crop_factor=160 # 448 # 384 # default is 512
+crop_factor=160 #448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=48
