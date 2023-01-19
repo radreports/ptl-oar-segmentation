@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_NECK
-#SBATCH --mem=42G
+#SBATCH --mem=112G
 #SBATCH -c 16
 #SBATCH --gres=gpu:2
 #SBATCH -n 1

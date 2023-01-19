@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=OAR_GLAND
-#SBATCH --mem=84G
-#SBATCH -c 16
+#SBATCH --job-name=OAR_MAJ
+#SBATCH --mem=169G
+#SBATCH -c 38
 #SBATCH --gres=gpu:4
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
@@ -31,7 +31,7 @@ gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
 fold=4 # for Kfold validation, fold 1 already completed...
-workers=3 # number of cpus used (each node has max of 45)
+workers=9 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=1 # batch size # unet3D can use 2
@@ -43,13 +43,13 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=20 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=26 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
 scale_by=2
 window=56 # default is 5
-tag="TOPGLD"
+tag="MAJORITY"
 crop_factor=192 #448 # 384 # default is 512
 crop_as='3D'
 external=False
