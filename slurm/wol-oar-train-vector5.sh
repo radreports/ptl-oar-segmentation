@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=WOLOAR4
-#SBATCH --mem=84G
-#SBATCH -c 12
+#SBATCH --mem=112G
+#SBATCH -c 16
 #SBATCH -n 1
 #SBATCH --gres=gpu:4
 #SBATCH -t 8-23:59:59

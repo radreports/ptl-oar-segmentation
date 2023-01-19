@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_GLAND
-#SBATCH --mem=230G
+#SBATCH --mem=112G
 #SBATCH -c 38
 #SBATCH --gres=gpu:4
 #SBATCH -n 1
