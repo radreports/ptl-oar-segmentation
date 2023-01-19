@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=OAR_NECK
-#SBATCH --mem=42G
-#SBATCH -c 8
-#SBATCH --gres=gpu:2
+#SBATCH --job-name=OAR_GLAND
+#SBATCH --mem=84G
+#SBATCH -c 16
+#SBATCH --gres=gpu:4
 #SBATCH -n 1
 #SBATCH -t 2-23:59:59
 #SBATCH --account=radiomics_gpu
@@ -16,7 +16,7 @@ model='WOLNET' # with new windowing
 model_name='WOLNET_2022_09_12_160955' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
-div_ids='0,1' # number of gpus
+div_ids='0,1,2,3' # number of gpus
 data='RADCURE' # Dataset being used
 loss_type="WFTTOPK" #"WDCTOPK" version1 # 'FOCALDSC'  'CATEGORICAL' # loss_type='COMBINED' # inital runs without TOPK, if multi consider using it...
 # data='RADCURE' #Dataset being used
@@ -27,11 +27,11 @@ deform=True
 volume_type='oars' # oar_version="" # new windowing used as of Aug 22/20
 clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
-gpus='0,1' # 2,3' # ,4,5,6,7'
+gpus='0,1,2,3' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
-fold=3 # for Kfold validation, fold 1 already completed...
-workers=4 # number of cpus used (each node has max of 45)
+fold=4 # for Kfold validation, fold 1 already completed...
+workers=3 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=1 # batch size # unet3D can use 2
@@ -43,17 +43,17 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=3 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=20 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
 scale_by=2
 window=56 # default is 5
-tag="NECK"
-crop_factor=160 # 448 # 384 # default is 512
+tag="TOPGLD"
+crop_factor=192 #448 # 384 # default is 512
 crop_as='3D'
 external=False
-fmaps=48
+fmaps=56
 spacing='3mm' # spacing between slices...
 filter=True
 data_path="/cluster/projects/radiomics/Temp/joe/RADCURE_VECTOR_UPDATE/" # "/storage/data/ml2022/RADCURE_VECTOR/"
