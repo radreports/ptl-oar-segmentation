@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=OAR_MAJ
 #SBATCH --mem=169G
+#SBATCH --gres=gpu:v100:4
 #SBATCH -c 38
 #SBATCH --gres=gpu:4
 #SBATCH -n 1
