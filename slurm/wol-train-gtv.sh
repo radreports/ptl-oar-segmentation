@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=GLANDS
+#SBATCH --job-name=GTV
 #SBATCH --mem=42G
 #SBATCH --gres=gpu:v100:1
 #SBATCH -t 2-23:59:59

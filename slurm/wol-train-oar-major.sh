@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=OAR_ORIG
+#SBATCH --job-name=OAR_ORIG2
 #SBATCH --mem=42G
 #SBATCH --gres=gpu:v100:1
 #SBATCH -t 2-23:59:59
