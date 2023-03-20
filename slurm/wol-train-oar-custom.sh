@@ -14,7 +14,7 @@ source /cluster/home/jmarsill/.bashrc
 source activate light8
 
 model='WOLNET' # with new windowing
-model_name='WOLNET_2022_09_12_160955' # allows us to reload from previous settings...
+model_name='WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
@@ -44,7 +44,7 @@ scheduler_type='pleateau' # 0.5 at 75 epochs for the training step...
 gamma=0.975 # decay lr by this factor...
 decay_after=1 # 15# 100 # 250 # decay lr after 4 epochs...
 shuffle=True
-classes=22 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
+classes=28 #19 # number of classes (to test on), PAN HNSCC GTV/CTV... (Do we need/want that?)
 norm='standard' # 'linear' # 'standard'
 overfit=False # False
 overfit_by=.15
