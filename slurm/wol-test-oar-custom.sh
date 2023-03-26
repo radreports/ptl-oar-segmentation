@@ -62,7 +62,7 @@ home_path="/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar
 model_path="/cluster/projects/radiomics/Temp/joe/models-1222" # "/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
 path="/cluster/home/jmarsill/ptl-oar-segmentation/test.py" #train_2 if training new model
-print_outputs_to=$model'_'$tag'_'$(date "+%b_%d_%Y_%T").txt
+print_outputs_to=$model'_'$tag'_'$(date "+%b_%d_%Y_%T")_TEST.txt
 
 echo 'Started python script.'
 
