@@ -14,7 +14,7 @@ source /cluster/home/jmarsill/.bashrc
 source activate light8
 
 model='WOLNET' # with new windowing
-model_name='WOLNET_2023_04_06_184355' # allows us to reload from previous settings...
+model_name='WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
@@ -35,7 +35,7 @@ fold=0 # for Kfold validation, fold 1 already completed...
 workers=6 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
-batch=2 # batch size # unet3D can use 2
+batch=1 # batch size # unet3D can use 2
 factor=1 # resample by
 tt_split=.9
 aug_p=0.9
@@ -51,7 +51,7 @@ overfit_by=.15
 scale_by=2
 window=64 # default is 5
 tag="NECKLEVEL"
-crop_factor=192 # 448 # 384 # default is 512
+crop_factor=128 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
 fmaps=56
