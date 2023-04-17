@@ -31,7 +31,7 @@ clip_max=1000 # clip_min=-300 # clip_max=200
 gpus='0' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=500 # 500 # 100 # number of epochs
-fold=0 # for Kfold validation, fold 1 already completed...
+fold=1 # for Kfold validation, fold 1 already completed...
 workers=6 # number of cpus used (each node has max of 45)
 lr=.001 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
@@ -61,7 +61,7 @@ data_path="/cluster/projects/radiomics/Temp/joe/NECKS_0123_2/" # "/storage/data/
 home_path="/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/cluster/projects/radiomics/Temp/joe/models-1222" # "/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
-path="/cluster/home/jmarsill/ptl-oar-segmentation/train.py" #train_2 if training new model
+path="/cluster/home/jmarsill/ptl-oar-segmentation/train_neck.py" #train_2 if training new model
 print_outputs_to=$model'_'$tag'_'$(date "+%b_%d_%Y_%T").txt
 
 echo 'Started python script.'
