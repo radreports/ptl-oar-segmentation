@@ -14,7 +14,7 @@ source /cluster/home/jmarsill/.bashrc
 source activate light8
 
 model='WOLNET' # with new windowing
-model_name='WOLNET_2023_04_12_141555' #'WOLNET_2023_03_26_000055' # 'WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
+model_name='WOLNET_2023_04_24_172930' #'WOLNET_2023_04_12_141555' #'WOLNET_2023_03_26_000055' # 'WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
