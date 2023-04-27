@@ -61,7 +61,7 @@ data_path="/cluster/projects/radiomics/Temp/joe/NECKS_0123_2/" # "/storage/data/
 home_path="/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/cluster/projects/radiomics/Temp/joe/models-1222" # "/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
-path="/cluster/home/jmarsill/ptl-oar-segmentation/train_neck.py" #train_2 if training new model
+path="/cluster/home/jmarsill/ptl-oar-segmentation/train_neck_1.py" #train_2 if training new model
 print_outputs_to=$model'_'$tag'_'$(date "+%b_%d_%Y_%T").txt
 
 echo 'Started python script.'
