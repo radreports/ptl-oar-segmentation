@@ -14,7 +14,7 @@ source /cluster/home/jmarsill/.bashrc
 source activate light8
 
 model='WOLNET' # with new windowing
-model_name='WOLNET_2023_04_24_172930' #'WOLNET_2023_04_06_184355' #'WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
+model_name='WOLNET_2023_06_06_134050' #'WOLNET_2023_04_06_184355' #'WOLNET_2023_01_31_190855' # allows us to reload from previous settings...
 site='ALL' # 'Oropharynx' #'Oropharynx' # 'ALL' # 'Nasopharynx' # 'ALL' #  #  # 'ALL'   # ''  #  '--site' default site is Oropharynx
 split_mode='csv' # 'csv_full' #  #
 div_ids='0,1,2,3' # number of gpus
@@ -30,10 +30,10 @@ clip_min=-500
 clip_max=1000 # clip_min=-300 # clip_max=200
 gpus='0' # 2,3' # ,4,5,6,7'
 backend='ddp'
-epoch=500 # 500 # 100 # number of epochs
+epoch=2000 # 500 # 100 # number of epochs
 fold=0 # for Kfold validation, fold 1 already completed...
 workers=6 # number of cpus used (each node has max of 45)
-lr=.001 # .00016 # .0004 # learning rate for optimizer
+lr=.003 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
 batch=2 # batch size # unet3D can use 2
 factor=1 # resample by
@@ -54,10 +54,10 @@ tag="NECKLEVEL"
 crop_factor=176 # 192 # 448 # 384 # default is 512
 crop_as='3D'
 external=False
-fmaps=48
+fmaps=56
 spacing='3mm' # spacing between slices...
 filter=True
-data_path="/cluster/projects/radiomics/Temp/joe/NECKS_0123_2/" # "/storage/data/ml2022/RADCURE_VECTOR/"
+data_path="/cluster/projects/radiomics/Temp/joe/NECKS_0322/" # "/storage/data/ml2022/RADCURE_VECTOR/"
 home_path="/cluster/home/jmarsill/ptl-oar-segmentation/" # "/h/jmarsilla/ptl-oar-segmentation/" # server "/home/gpudual"
 model_path="/cluster/projects/radiomics/Temp/joe/models-1222" # "/h/jmarsilla/models" #"--model-path"
 use_16bit=False # save model to...
