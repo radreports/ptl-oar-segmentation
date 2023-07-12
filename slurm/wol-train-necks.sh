@@ -31,7 +31,7 @@ clip_max=1000 # clip_min=-300 # clip_max=200
 gpus='0' # 2,3' # ,4,5,6,7'
 backend='ddp'
 epoch=2000 # 500 # 100 # number of epochs
-fold=0 # for Kfold validation, fold 1 already completed...
+fold=1 # for Kfold validation, fold 1 already completed...
 workers=6 # number of cpus used (each node has max of 45)
 lr=.003 # .00016 # .0004 # learning rate for optimizer
 weight_decay=0.000001 # .000001 # decay rate for optimizer
